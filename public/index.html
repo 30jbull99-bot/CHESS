@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HyperNova Chess Arena</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-glow"></div>
+  <header class="arena-header">
+    <h1>HyperNova Chess Arena</h1>
+    <p class="tagline">Classic strategy, electrified competition.</p>
+  </header>
+
+  <main class="arena-layout">
+    <section class="board-panel">
+      <div class="mode-controls">
+        <button id="local-mode" class="control-button active">Dual Arena</button>
+        <button id="ai-mode" class="control-button">AI Gauntlet</button>
+      </div>
+      <div id="status-banner" class="status-banner">Welcome challenger! Select a mode to begin.</div>
+      <div id="chess-board" class="chess-board"></div>
+      <div class="action-row">
+        <button id="reset-button" class="control-button">Reset Match</button>
+        <button id="undo-button" class="control-button">Undo Move</button>
+      </div>
+      <div class="timers">
+        <div class="timer" id="white-timer">White • 05:00</div>
+        <div class="timer" id="black-timer">Black • 05:00</div>
+      </div>
+    </section>
+
+    <aside class="meta-panel">
+      <section class="player-setup">
+        <h2>Competitors</h2>
+        <label>White</label>
+        <input type="text" id="white-name" placeholder="White warrior" maxlength="20" />
+        <label>Black</label>
+        <input type="text" id="black-name" placeholder="Dark challenger" maxlength="20" />
+        <button id="start-match" class="control-button">Launch Match</button>
+      </section>
+
+      <section class="leaderboard">
+        <h2>Leaderboard</h2>
+        <ul id="leaderboard-list" class="leaderboard-list"></ul>
+      </section>
+
+      <section class="achievements">
+        <h2>Achievements</h2>
+        <div id="achievement-grid" class="achievement-grid"></div>
+      </section>
+
+      <section class="match-log">
+        <h2>Match Log</h2>
+        <ul id="move-list" class="move-list"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <template id="achievement-template">
+    <div class="achievement-card">
+      <div class="achievement-icon">🏆</div>
+      <div class="achievement-body">
+        <h3 class="achievement-title"></h3>
+        <p class="achievement-desc"></p>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
